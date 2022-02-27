@@ -1,7 +1,7 @@
-package src;
+package dataStructures;
 /**
  * 
- * @author diego alonzo 20172
+ * @author Diego Alonzo 20172
  *Es generic y es un ADT
  * @param <T>
  */
