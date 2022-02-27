@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-02-27T04:34:54.297Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 OPR/84.0.4316.21" etag="2KxdtmcWUZStfG913Vuj" version="16.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-27T20:18:09.385Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 OPR/84.0.4316.21" etag="ZB0HlhupyGJwHE6G_yf6" version="16.6.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2083" dy="1701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1942" dy="1634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -13,7 +13,7 @@
         <mxCell id="DfqXrMF1ajIBUZLFQvzN-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="DfqXrMF1ajIBUZLFQvzN-5" vertex="1">
           <mxGeometry y="60" width="160" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="DfqXrMF1ajIBUZLFQvzN-8" value="+ StackArrayList(): public&#xa;+ getHead(): node&lt;T&gt;&#xa;+ setHead(head: node&lt;T&gt;)&#xa;+ getCount(): int&#xa;override&#xa;+ push(value: T): void&#xa;+ pull(): T&#xa;+ peek() T&#xa;+ count(): int&#xa;+ isEmpty(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="DfqXrMF1ajIBUZLFQvzN-5" vertex="1">
+        <mxCell id="DfqXrMF1ajIBUZLFQvzN-8" value="+ StackArrayList(): public&#xa;+ getHead(): node&lt;T&gt;&#xa;+ setHead(head: node&lt;T&gt;)&#xa;override&#xa;+ push(value: T): void&#xa;+ pull(): T&#xa;+ peek() T&#xa;+ count(): int&#xa;+ isEmpty(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="DfqXrMF1ajIBUZLFQvzN-5" vertex="1">
           <mxGeometry y="68" width="160" height="152" as="geometry" />
         </mxCell>
         <mxCell id="DfqXrMF1ajIBUZLFQvzN-11" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="DfqXrMF1ajIBUZLFQvzN-5" target="DfqXrMF1ajIBUZLFQvzN-29" edge="1">
@@ -139,7 +139,7 @@
         <mxCell id="Gtw66gkAgabULelspTCr-10" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Gtw66gkAgabULelspTCr-8" vertex="1">
           <mxGeometry y="70" width="280" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="Gtw66gkAgabULelspTCr-11" value="- addToStackInfix(X: int): void&#xa;- node (): node&#xa;- addToStackOps(X: string): void&#xa;- evaluateCases(Y:&lt;T&gt;): void&#xa;- readStack(mode: boolean, &lt;T&gt;): &lt;T&gt;&#xa;+ stackCase(output: string, stackOps: stack): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Gtw66gkAgabULelspTCr-8" vertex="1">
+        <mxCell id="Gtw66gkAgabULelspTCr-11" value="+ stackCase(output: string, stackOps: stack): void&#xa;- addToStackInfix(X: int): void&#xa;- addToStackOps(X: string): void&#xa;- evaluateCases(Y:&lt;T&gt;): void&#xa;- readStack(mode: boolean, &lt;T&gt;): &lt;T&gt;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Gtw66gkAgabULelspTCr-8" vertex="1">
           <mxGeometry y="78" width="280" height="102" as="geometry" />
         </mxCell>
         <mxCell id="Gtw66gkAgabULelspTCr-12" value="PostfixOperations" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -151,7 +151,7 @@
         <mxCell id="Gtw66gkAgabULelspTCr-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="Gtw66gkAgabULelspTCr-12" vertex="1">
           <mxGeometry y="70" width="239" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="Gtw66gkAgabULelspTCr-15" value="- evaluateOpsType(mode: char): void&#xa;- evaluatePsfx(userpsfx: list): void&#xa;- add(): float&#xa;- subs(): float&#xa;- mult(): float&#xa;- div(): float&#xa;- exp(): float" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Gtw66gkAgabULelspTCr-12" vertex="1">
+        <mxCell id="Gtw66gkAgabULelspTCr-15" value="+ evaluatePsfx(userpsfx: list): void&#xa;- evaluateOpsType(mode: char): void&#xa;- add(): float&#xa;- subs(): float&#xa;- mult(): float&#xa;- div(): float&#xa;- exp(): float" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="Gtw66gkAgabULelspTCr-12" vertex="1">
           <mxGeometry y="78" width="239" height="112" as="geometry" />
         </mxCell>
         <mxCell id="Gtw66gkAgabULelspTCr-16" value="main" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
