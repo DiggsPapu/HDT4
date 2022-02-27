@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-02-27T03:56:19.115Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="OMhxM_aC4SVEdWdruUKZ" version="16.6.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-02-27T04:03:29.383Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="wDHMfLQRgU0-JxHlUaj0" version="16.6.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1808" dy="1711" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -131,7 +131,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Gtw66gkAgabULelspTCr-8" value="Infx2PsfxTranscription" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="560" y="280" width="280" height="160" as="geometry" />
+          <mxGeometry x="157" y="-280" width="280" height="180" as="geometry" />
         </mxCell>
         <mxCell id="Gtw66gkAgabULelspTCr-9" value="- infxlist: string[]&#xa;- stackStorageOps: stack" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-8">
           <mxGeometry y="26" width="280" height="44" as="geometry" />
@@ -139,13 +139,13 @@
         <mxCell id="Gtw66gkAgabULelspTCr-10" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-8">
           <mxGeometry y="70" width="280" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="Gtw66gkAgabULelspTCr-11" value="- addToStackInfix(X: int): void&#xa;- node (): node&#xa;- addToStackOps(X: string): void&#xa;- evaluateCases(Y:&lt;T&gt;): void&#xa;+ readStack(mode: boolean, &lt;T&gt;): &lt;T&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-8">
-          <mxGeometry y="78" width="280" height="82" as="geometry" />
+        <mxCell id="Gtw66gkAgabULelspTCr-11" value="- addToStackInfix(X: int): void&#xa;- node (): node&#xa;- addToStackOps(X: string): void&#xa;- evaluateCases(Y:&lt;T&gt;): void&#xa;- readStack(mode: boolean, &lt;T&gt;): &lt;T&gt;&#xa;+ stackCase(output: string, stackOps: stack): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-8">
+          <mxGeometry y="78" width="280" height="102" as="geometry" />
         </mxCell>
         <mxCell id="Gtw66gkAgabULelspTCr-12" value="PostfixOperations" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="827" y="40" width="239" height="190" as="geometry" />
+          <mxGeometry x="530" y="-280" width="239" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="Gtw66gkAgabULelspTCr-13" value="+ psfxlist: string[]&#xa;- stack: stack" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-12">
+        <mxCell id="Gtw66gkAgabULelspTCr-13" value="- psfxlist: string[]&#xa;- stack: stack" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-12">
           <mxGeometry y="26" width="239" height="44" as="geometry" />
         </mxCell>
         <mxCell id="Gtw66gkAgabULelspTCr-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-12">
@@ -155,7 +155,7 @@
           <mxGeometry y="78" width="239" height="112" as="geometry" />
         </mxCell>
         <mxCell id="Gtw66gkAgabULelspTCr-16" value="main" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="560" y="40" width="240" height="138" as="geometry" />
+          <mxGeometry x="-110" y="-440" width="240" height="138" as="geometry" />
         </mxCell>
         <mxCell id="Gtw66gkAgabULelspTCr-17" value="+ userOperation: string&#xa;+ userMode: char" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-16">
           <mxGeometry y="26" width="240" height="44" as="geometry" />
@@ -166,16 +166,16 @@
         <mxCell id="Gtw66gkAgabULelspTCr-19" value="+ scanner(): void&#xa;+ main(String[] args): void&#xa;+ useDataType(userMode : char): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Gtw66gkAgabULelspTCr-16">
           <mxGeometry y="78" width="240" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Gtw66gkAgabULelspTCr-20" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="370" y="-140" as="sourcePoint" />
-            <mxPoint x="530" y="-140" as="targetPoint" />
+        <mxCell id="Gtw66gkAgabULelspTCr-24" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Gtw66gkAgabULelspTCr-17" target="Gtw66gkAgabULelspTCr-8">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="240" y="-400" as="sourcePoint" />
+            <mxPoint x="400" y="-400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Gtw66gkAgabULelspTCr-23" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Gtw66gkAgabULelspTCr-25" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Gtw66gkAgabULelspTCr-11" target="Gtw66gkAgabULelspTCr-13">
           <mxGeometry x="-1" y="3" relative="1" as="geometry">
-            <mxPoint x="440" y="-90" as="sourcePoint" />
-            <mxPoint x="600" y="-90" as="targetPoint" />
+            <mxPoint x="240" y="-40" as="sourcePoint" />
+            <mxPoint x="407" y="72" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
