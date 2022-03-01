@@ -6,17 +6,17 @@ package dataStructures;
  *
  * @param <T> Generics
  */
-public class Node<T> {
+public class SingleNode<T>{
 	/**
 	 * Creacion del nodo, con su valor y su apuntador.
 	 */
-	private T Value;
-	Node<T> next;
+	private T value;
+	SingleNode<T> next;
 	/**
 	 * Creacion del nodo inicial, 
 	 * cuando no tiene a quien apuntar.
 	 */
-	public Node() {
+	public SingleNode() {
 		next = null;
 	}
 	/**
@@ -24,8 +24,8 @@ public class Node<T> {
 	 * Es un valor generico
 	 * @param Value
 	 */
-	public Node(T Value) {
-		this.Value = Value;
+	public SingleNode(T Value) {
+		this.setValue(Value);
 		next = null;
 	}
 	/**
@@ -33,19 +33,22 @@ public class Node<T> {
 	 * @return
 	 */
 	public T getValue() {
-		return Value;
+		return value;
 	}
 	
-	public void setValue(T value) {
-		Value = value;
+	public void setValue(T Value) {
+		this.value = Value;
 	}
 	
-	public Node<T> getNext() {
+	public SingleNode<T> getNext() {
 		return next;
 	}
 	
-	public void setNext(Node<T> next) {
+	public void setNext(SingleNode<T> next) {
+		// TODO Auto-generated method stub
 		this.next = next;
 	}
+	
+
 
 }
