@@ -17,6 +17,7 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 	}
 	/**
 	 * Es el append inverso
+	 * @author Moises
 	 * @category append
 	 * @param value
 	 */
@@ -43,6 +44,7 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 	}
 	/**
 	 * Es el append normal
+	 * @author Moises
 	 * @category append
 	 * @param value, newNode
 	 */
@@ -69,7 +71,13 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 		count++;
 		
 	}
-
+	
+	/**
+	 * Inserta el valor en cualquier posicion indicada
+	 * @author Moises
+	 * @param T value, int index
+	 * @return void
+	 */
 	@Override
 	public void Insert(T value, int index) {
 		
@@ -109,7 +117,15 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
         }
 		
 	}
-
+	
+	/**
+	 * Es para borrar cualquier valor dado el index que es brindado.
+	 * En el caso de que den un index menor a 0 entonces eliminara el valor 0.
+	 * En caso de que den un index mayor al index maximo eliminara el ultimo valor.
+	 * @author Diego Alonzo
+	 * @param none
+	 * @return DeletedValue
+	 */
 	@Override
 	public T Delete(int index) {
 		// TODO Auto-generated method stub
@@ -156,6 +172,13 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 		}
 	}
 
+	/**
+	 * Elimina el primer valor.
+	 * Es un pull.
+	 * @author Diego Alonzo
+	 * @category pull
+	 * @params none
+	 */
 	@Override
 	public T DeleteAtStart() {
 		// TODO Auto-generated method stub
@@ -179,6 +202,12 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 		
 	}
 
+	/**
+	 * Es un pull pero de la cola o final
+	 * @author Moises
+	 * @category pull
+	 * @params none
+	 */
 	@Override
 	public T DeleteAtEnd() {
 		// TODO Auto-generated method stub
@@ -199,7 +228,12 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 			return temp.getValue();			
 		}
 	}
-
+	/**
+	 * Es un peek pero de cualquier posicion segun el index
+	 * @author Moises
+	 * @return DoubleNodeValue
+	 * @params int index 
+	 */
 	@Override
 	public T Get(int index) {
 	    if (!IsEmpty())
@@ -240,41 +274,42 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
         return null;
 
 	}
-
+	/**
+	 * Es el isEmpty pero del otro abstracto
+	 */
 	@Override
 	public boolean IsEmpty() {
-		return isEmpty();
+		return count==0;
 	}
-
+	/**
+	 * Es el contador de la otra interfaz
+	 */
 	@Override
 	public int Count() {
-		return count();
+		return count;
 	}
 	
-
+/**
+ * Es el pull hecho y derecho de la interfaz de IStack
+ */
 	@Override
 	public T pull() {
 		// TODO Auto-generated method stub
 		return DeleteAtStart();
 	}
-
+/**
+ * Es el peek de la interfaz IStack
+ * 
+ */
 	@Override
 	public T peek() {
 		// TODO Auto-generated method stub
 		return start.getValue();
 	}
 
-	@Override
-	public int count() {
-		// TODO Auto-generated method stub
-		return count;
-	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return count==0;
-	}
+	/**
+	 * Es el push 
+	 */
 	@Override
 	public void push(T value) {
 		// TODO Auto-generated method stub

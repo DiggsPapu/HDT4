@@ -13,7 +13,7 @@ public interface IStack<T> {
 	
 	T peek();
 	
-	int count();
+	int Count();
 	
-	boolean isEmpty();
+	boolean IsEmpty();
 }

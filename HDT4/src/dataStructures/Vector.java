@@ -21,13 +21,13 @@ public class Vector<T> implements IStack<T> {
 	}
 
 	@Override
-	public int count() {
+	public int Count() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public boolean IsEmpty() {
 		// TODO Auto-generated method stub
 		return false;
 	}

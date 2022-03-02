@@ -187,15 +187,6 @@ class DoubleLinkedListTest {
 		assertEquals(testListPotente2.Get(0), testListPotente2.peek());
 	}
 
-	@Test
-	void testCount1() {
-		PreparacionDeLosTest();
-		assertEquals(testListPotente2.count(), testListPotente1.count());	}
-
-	@Test
-	void testIsEmpty1() {
-		DoubleLinkedList<String> empty = new DoubleLinkedList<String>();
-		assertEquals(true, empty.isEmpty());	}
 
 	@Test
 	void testPush() {

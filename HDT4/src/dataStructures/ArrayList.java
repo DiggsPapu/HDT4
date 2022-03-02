@@ -4,6 +4,18 @@ public class ArrayList <T> implements IStack<T> {
 
 	private SingleNode<T> head;
 	private int count;
+	public SingleNode<T> getHead() {
+		return head;
+	}
+	public void setHead(SingleNode<T> head) {
+		this.head = head;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 	public ArrayList() {
 		head=null;
 	}
@@ -11,7 +23,7 @@ public class ArrayList <T> implements IStack<T> {
 	public void push(T value) {
 		// TODO Auto-generated method stub
 		SingleNode<T> newNode = new SingleNode<T>(value);
-		if (isEmpty()) {
+		if (IsEmpty()) {
 			head=newNode;
 		}
 		else {
@@ -24,7 +36,7 @@ public class ArrayList <T> implements IStack<T> {
 	@Override
 	public T pull() {
 		// TODO Auto-generated method stub
-		if (count() == 0) {
+		if (Count() == 0) {
 			return null;
 		} else if (count==1) {
 			SingleNode<T> temp=head;
@@ -43,7 +55,7 @@ public class ArrayList <T> implements IStack<T> {
 	@Override
 	public T peek() {
 		// TODO Auto-generated method stub
-		if (isEmpty()) {
+		if (IsEmpty()) {
 			return null;
 		} else {
 			return head.getValue();
@@ -51,13 +63,13 @@ public class ArrayList <T> implements IStack<T> {
 	}
 
 	@Override
-	public int count() {
+	public int Count() {
 		// TODO Auto-generated method stub
 		return count;
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public boolean IsEmpty() {
 		// TODO Auto-generated method stub
 		return (head == null);
 	}
