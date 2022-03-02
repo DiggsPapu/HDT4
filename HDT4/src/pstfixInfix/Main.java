@@ -1,10 +1,57 @@
 package pstfixInfix;
 
-public class Main {
+import java.io.File;
+import java.io.BufferedWriter;
+import java.util.Scanner;
 
+/**
+ * 
+ * @author Diego Alonzo 20172
+ *
+ */
+public class Main {
+	public static void userDataType(String userMode) {
+		Scanner scanner = new Scanner(System.in);
+		if (userMode == "ArrayList") {
+			
+		scanner.close();
+		}else if (userMode == "Vector") {
+			scanner.close();
+		}else if (userMode == "List") {
+			System.out.print("Dado que ingreso List, entonces necesitamos que indique que tipo de List:\n"
+					+ "1. SingleLinkedList\n2. DoubleLinkedList");
+			
+			String listType = scanner.nextLine();
+			
+			if (listType == "SingleLinkedList") {
+			scanner.close();	
+			}else if (listType == "DoubleLinkedList") {
+			scanner.close();	
+			}
+		}else {
+			System.out.print("No selecciono niguna opcion valida. Feliz dia");
+		}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
 		
+		System.out.print("Bienvenidos al programa para operar funciones Infix mediante Postfix.\n"
+				+ "Es por ello que necesitamos que nos indique en donde es que se encuentra su archivo a evaluar.\n ");
+		
+		String directory = scanner.nextLine();
+		
+		File newfile = new File(directory);
+		
+		if (newfile.exists()&& newfile.canRead()){
+			System.out.print("Ahora necesitamos que nos indique que clase de estructura de datos desea que implementemos.\n"
+					+ "1.ArrayList\n2.Vector\n3.List");
+			String dataType = scanner.nextLine();
+			userDataType(dataType);
+			scanner.close();
+		} else {
+			System.out.print("El archivo no existe o no es posible leerlo.");
+		}
 	}
 
 }
