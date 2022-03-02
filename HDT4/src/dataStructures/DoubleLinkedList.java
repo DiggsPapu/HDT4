@@ -6,11 +6,20 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 	private DoubleNode<T> end;
 	private int count;
 	
+	/**
+	 * Es para inicializar una lista doblemente encadenada vacia.
+	 * @category public
+	 */
 	public DoubleLinkedList() {
 		start = null;
 		end = null;
 		count = 0;
 	}
+	/**
+	 * Es el append inverso
+	 * @category append
+	 * @param value
+	 */
 	@Override
 	public void InsertAtStart(T value) {
 		DoubleNode<T> newNode = new DoubleNode<T>(value);
@@ -32,7 +41,11 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 		
 		count++;
 	}
-
+	/**
+	 * Es el append normal
+	 * @category append
+	 * @param value, newNode
+	 */
 	@Override
 	public void InsertAtEnd(T value) {
 		
@@ -100,19 +113,91 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 	@Override
 	public T Delete(int index) {
 		// TODO Auto-generated method stub
-		return null;
+		if (!IsEmpty()) {
+			
+			if ((index<=0)) {
+				return DeleteAtStart();
+				
+			} else if (index>=Count()-1) {
+				return DeleteAtEnd();
+				
+				
+			} else {
+				if (count/2>=index) { //Para empezar en el start
+					DoubleNode<T> temp= start;
+					int k=0;
+					while(k<index) {
+						temp = temp.getNext();
+						k++;
+					}
+					temp.getPrevious().setNext(temp.getNext());
+					temp.getNext().setPrevious(temp.getPrevious());
+					count--;
+					return temp.getValue();
+				} else { //Para empezar en el end
+					DoubleNode<T> temp = end;
+					int l=count-1;
+					while (l>index) {
+						temp=temp.getPrevious();
+						l--;
+					}
+					temp.getPrevious().setNext(temp.getNext());
+					temp.getNext().setPrevious(temp.getPrevious());
+					count--;
+					return temp.getValue();
+				}
+				
+					
+			}
+			
+				
+		} else {
+			return null;
+		}
 	}
 
 	@Override
 	public T DeleteAtStart() {
 		// TODO Auto-generated method stub
-		return null;
+		if (IsEmpty()) {
+			return null;
+		} else if (Count()==1){
+			DoubleNode<T> temp = start;
+			start = null;
+			end = null;
+			count--;
+			return temp.getValue();
+		}else {
+			DoubleNode<T> temp=start;
+			start=start.getNext();
+			start.setPrevious(end);
+			end.setNext(start);
+			count--;
+			return temp.getValue();
+		}
+		
+		
 	}
 
 	@Override
 	public T DeleteAtEnd() {
 		// TODO Auto-generated method stub
-		return null;
+		if (IsEmpty()) {
+			return null;
+		}else if (Count()==1) {
+			DoubleNode<T> temp = end;
+			end = null;
+			start= null;
+			count--;
+			return temp.getValue();
+		}else {
+			DoubleNode<T> temp = end;
+			end = end.getPrevious();
+			start.setPrevious(end);
+			end.setNext(start);
+			count--;
+			return temp.getValue();			
+		}
 	}
 
 	@Override
@@ -170,13 +255,13 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 	@Override
 	public T pull() {
 		// TODO Auto-generated method stub
-		return null;
+		return DeleteAtStart();
 	}
 
 	@Override
 	public T peek() {
 		// TODO Auto-generated method stub
-		return null;
+		return start.getValue();
 	}
 
 	@Override
@@ -193,7 +278,7 @@ public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
 	@Override
 	public void push(T value) {
 		// TODO Auto-generated method stub
-		
+		InsertAtStart(value);
 	}
 
 
