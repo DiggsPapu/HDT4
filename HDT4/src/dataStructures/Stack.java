@@ -13,19 +13,19 @@ public abstract class Stack<T> {
 		
 	}
 	
-	T pull() {
+	public T pull() {
 		return head;
 	}
 	
-	T peek() {
+	public T peek() {
 		return head;
 	}
 	
-	int Count() {
+	public int Count() {
 		return count;
 	}
 	
-	boolean IsEmpty() {
+	public boolean IsEmpty() {
 		return count==0;
 	}
 }

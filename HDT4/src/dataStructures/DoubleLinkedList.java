@@ -295,7 +295,7 @@ public class DoubleLinkedList<T> extends Stack<T> implements IList<T> {
 	@Override
 	public T pull() {
 		// TODO Auto-generated method stub
-		return DeleteAtStart();
+		return DeleteAtEnd();
 	}
 /**
  * Es el peek de la interfaz IStack
@@ -304,7 +304,7 @@ public class DoubleLinkedList<T> extends Stack<T> implements IList<T> {
 	@Override
 	public T peek() {
 		// TODO Auto-generated method stub
-		return start.getValue();
+		return Get(Count()-1);
 	}
 
 	/**
@@ -313,7 +313,7 @@ public class DoubleLinkedList<T> extends Stack<T> implements IList<T> {
 	@Override
 	public void push(T value) {
 		// TODO Auto-generated method stub
-		InsertAtStart(value);
+		InsertAtEnd(value);
 	}
 
 
