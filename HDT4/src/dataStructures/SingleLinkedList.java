@@ -8,18 +8,18 @@ public class SingleLinkedList <T> extends Stack<T> implements IList<T> {
 
 	@Override
 	public void push(T value) {
-		InsertAtStart(value);
+		InsertAtEnd(value);
 		
 	}
 
 	@Override
 	public T pull() {
-		return DeleteAtStart();
+		return DeleteAtEnd();
 	}
 
 	@Override
 	public T peek() {
-		return Get(0);
+		return Get(Count()-1);
 	}
 
 	@Override
@@ -162,7 +162,7 @@ public T DeleteAtStart() {
                 SingleNode<T> temp = start.getNext();
 
                 //Search the position where the node will be inserted
-                while (temp != null)
+                while (temp != end)
                 {
                     pretemp = temp;
                     temp = temp.getNext();

@@ -27,7 +27,7 @@ class SingleLinkedListTest {
 	@Test
 	void testPush() {
 		PreparacionDeLosTest();
-		testListPotente2.InsertAtStart(438920); 
+		testListPotente2.InsertAtEnd(438920); 
 		testListPotente1.push(438920);
 		assertEquals(testListPotente2.pull(), testListPotente1.pull());
 	}
@@ -37,7 +37,7 @@ class SingleLinkedListTest {
 		PreparacionDeLosTest();
 		testListPotente2.push(109);
 		testListPotente1.push(109);
-		assertEquals(testListPotente2.DeleteAtStart(), testListPotente1.pull());
+		assertEquals(testListPotente2.DeleteAtEnd(), testListPotente1.pull());
 	}
 
 	@Test
