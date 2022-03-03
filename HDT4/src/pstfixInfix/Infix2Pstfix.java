@@ -17,27 +17,27 @@ public class Infix2Pstfix {
 		 * @param output
 		 * @param opStack
 		 */
-		public void Infx2Pstfix(String output){
+		public void Infx2Pstfix(String output, String[] list){
 			if (output=="ArrayList") {
 				//Caso en el que se genera el stack de ArrayList
 				stackStorage = new ArrayList<String>();
 				infixList = new ArrayList<String>();
-				System.out.print("Entro ArrayList\n");
+				
 			}else if (output == "Vector") {
 				//Caso en el que se genera el stack de Vector
-				stackStorage= new Vector<String>();
-				infixList = new Vector<String>();
-				System.out.print("Entro Vector\n");
+				stackStorage= new Vector<String>(list.length);
+				infixList = new Vector<String>(list.length);
+				
 			}else if (output == "SingleLinkedList") {
 				//Caso en el que se genera el stack de StringLinkedList
 				stackStorage= new SingleLinkedList<String>();
 				infixList = new SingleLinkedList<String>();
-				System.out.print("Entro SingleLinkedList\n");
+				
 			}else if (output == "DoubleLinkedList") {
 				//Caso en el que se genera el stack de DoubleLinkedList
 				stackStorage= new DoubleLinkedList<String>();
 				infixList = new DoubleLinkedList<String>();
-				System.out.print("Entro DoubleLinkedList\n");
+				
 			}else {
 				System.out.print("Se ingreso una estructura de dato invalida.");
 				
@@ -79,10 +79,10 @@ public class Infix2Pstfix {
 			//Para evaluar los casos de numero, suma, resta, multiplicacion y division
 			for (int k=0; k<listValues.length; k++) {
 				evaluateCases(listValues[k]);
-				System.out.print("Ingreso a printList: ");
-				printList();
-				System.out.print("Ingreso a printStack: ");
-				printStack();
+//				System.out.print("Ingreso a printList: ");
+//				printList();
+//				System.out.print("Ingreso a printStack: ");
+//				printStack();
 				
 			}
 			//El pull hace que el contador disminuya por lo que no se almacenan todos
@@ -91,14 +91,15 @@ public class Infix2Pstfix {
 			for (int l = 0; l<contadorInicial; l++) {
 				
 				if (stackStorage.peek()=="(") {
-					System.out.print("Le hizo falta un parentesis cerrado\n");				
+					System.out.print("Le hizo falta un parentesis cerrado\n");	
+					return null;
 				}else {
 					infixList.push(stackStorage.pull());
 				}
 				
 			}
 			
-			printList();
+//			printList();
 			return infixList;
 		}
 		
@@ -185,42 +186,39 @@ public class Infix2Pstfix {
 		 * Caso en el que se encuentra un parentesis cerrado
 		 */
 		private void caseCloseParenthesis() {
-			System.out.print("Ingresofjdkslf");
-			System.out.print(stackStorage.peek());
+			
 			while (!stackStorage.IsEmpty() && stackStorage.peek()!="(") {
-				System.out.print("Ingresofjdkslf");
-				
 				infixList.push(stackStorage.pull());	
-				printList();
+//				printList();
 			} if (stackStorage.IsEmpty()) {
 				System.out.print("Hizo falta un parentesis abierto");
 			} else if (stackStorage.peek()=="(") {
-				System.out.print("Entro a ("+ stackStorage.Count()+"\n");
 				stackStorage.pull();
 			}
 		}
 		
 		
 
-			
-		private void printList() {
-			for (int k = 0 ; k<infixList.Count(); k++) {
-				System.out.print(((SingleLinkedList<String>) infixList).Get(k)+" ");
-			}
-			System.out.print("\n");
-		}
-		
-		private void printStack() {
-			for (int k = 0 ; k<stackStorage.Count(); k++) {
-				System.out.print(((SingleLinkedList<String>) stackStorage).Get(k)+" ");
-			}
-			System.out.print("\n");
-		}
+//			
+//		private void printList() {
+//			for (int k = 0 ; k<infixList.Count(); k++) {
+//				System.out.print(((ArrayList<String>) infixList).Get(k)+" ");
+//			}
+//			System.out.print("\n");
+//		}
+//		
+//		private void printStack() {
+//			for (int k = 0 ; k<stackStorage.Count(); k++) {
+//				System.out.print(((ArrayList<String>) stackStorage).Get(k)+" ");
+//			}
+//			System.out.print("\n");
+//		}
 		public static void main(String[] args) {
 			Infix2Pstfix translate = new Infix2Pstfix();
-			translate.Infx2Pstfix("SingleLinkedList");
 			String[] list = {"(","1","+","3",")","*","24","*","3","^","(","1","/","2",")"};
+			translate.Infx2Pstfix("ArrayList", list);
 			translate.readStack(list);
+
 		}
 	
 }

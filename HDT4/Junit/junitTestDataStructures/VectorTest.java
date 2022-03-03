@@ -1,4 +1,4 @@
-package junit;
+package junitTestDataStructures;
 
 import static org.junit.jupiter.api.Assertions.*;
 

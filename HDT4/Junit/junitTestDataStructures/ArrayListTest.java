@@ -1,4 +1,4 @@
-package junit;
+package junitTestDataStructures;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,7 +9,7 @@ class ArrayListTest {
 	@Test
 	void testArrayList() {
 		ArrayList<String> arrayEmpty = new ArrayList<String>();
-		assertEquals(arrayEmpty.getHead(), null);
+		assertEquals(arrayEmpty.peek(), null);
 	}
 
 	@Test

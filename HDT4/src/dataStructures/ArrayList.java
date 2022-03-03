@@ -3,63 +3,73 @@ package dataStructures;
 public class ArrayList <T> extends Stack<T> {
 
 	private SingleNode<T> head;
+	private SingleNode<T> end;
 	private int count;
-	public SingleNode<T> getHead() {
-		return head;
-	}
-	public void setHead(SingleNode<T> head) {
-		this.head = head;
-	}
-	public int getCount() {
-		return count;
-	}
-	public void setCount(int count) {
-		this.count = count;
-	}
-	public ArrayList() {
-		head=null;
-	}
+	
 	@Override
 	public void push(T value) {
 		// TODO Auto-generated method stub
 		SingleNode<T> newNode = new SingleNode<T>(value);
-		if (IsEmpty()) {
-			head=newNode;
-		}
-		else {
-			newNode.setNext(newNode);
-			head=newNode;
-		}
+
+        if (IsEmpty())
+        {
+            head = newNode;
+            end = newNode;
+        }
+        else {
+            end.setNext(newNode);
+            end = newNode;
+        }
+
 		count++;
 	}
+		
+	
 
 	@Override
 	public T pull() {
-		// TODO Auto-generated method stub
-		if (Count() == 0) {
-			return null;
-		} else if (count==1) {
-			SingleNode<T> temp=head;
-			head=null;
-			count--;
-			return temp.getValue();
-		}else {
-			SingleNode<T> temp = head;
-			head = temp.getNext();
-			count--;
-			return temp.getValue();
-		}
-		
-	}
+		if (!IsEmpty()) 
+        {
 
+            if (Count() == 1) //Only one node then delete
+            {
+                SingleNode<T> temp = head;
+                head = null;
+                end = null;
+                count--;
+                return temp.getValue();
+            }
+            else
+            {
+                SingleNode<T> pretemp = head;
+                SingleNode<T> temp = head.getNext();
+
+                //Search the position where the node will be inserted
+                while (temp != end)
+                {
+                    pretemp = temp;
+                    temp = temp.getNext();
+                }
+
+                //Delete the node
+                end = pretemp;
+                end.setNext(null);
+                count--;
+                return temp.getValue();
+            }
+
+        }
+
+        return null;
+	}
 	@Override
 	public T peek() {
-		// TODO Auto-generated method stub
-		if (IsEmpty()) {
-			return null;
-		} else {
-			return head.getValue();
-		}
+	    if (!IsEmpty()){
+         return end.getValue();
+           
+        }else {
+        	return null;
+        }     
 	}
 
 	@Override
@@ -71,7 +81,47 @@ public class ArrayList <T> extends Stack<T> {
 	@Override
 	public boolean IsEmpty() {
 		// TODO Auto-generated method stub
-		return (head == null);
+		return Count()==0;
+	}
+	
+public T Get(int index) {
+		
+	    if (!IsEmpty())
+        {
+            if (index == 0)
+            {
+                return head.getValue();
+            }
+            else if (index == (Count() - 1))
+            {
+                return end.getValue();
+            }
+            else if ((index > 0) && (index < (Count() - 1)))
+            {
+                SingleNode<T> temp = head;
+                int i = 0;
+                while ((temp != null) && (i != index))
+                {
+                    temp = temp.getNext();
+                    i++;
+                }
+
+                if (temp != null)
+                {
+                    return temp.getValue();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        return null;
 	}
 
 }

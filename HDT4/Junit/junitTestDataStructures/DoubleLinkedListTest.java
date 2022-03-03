@@ -1,4 +1,4 @@
-package junit;
+package junitTestDataStructures;
 /**
  * @author Diego Alonzo -20172
  * La mayoria fue obtenido de lo compartido por moises 
