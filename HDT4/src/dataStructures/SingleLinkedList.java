@@ -1,6 +1,6 @@
 package dataStructures;
 
-public class SingleLinkedList <T> implements IList<T>, IStack<T> {
+public class SingleLinkedList <T> extends Stack<T> implements IList<T> {
 
 	private int count;
     private SingleNode<T> start;

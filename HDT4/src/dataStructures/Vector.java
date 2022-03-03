@@ -1,6 +1,6 @@
 package dataStructures;
 
-public class Vector<T> implements IStack<T> {
+public class Vector<T> extends Stack<T> {
 
 	@Override
 	public void push(T value) {

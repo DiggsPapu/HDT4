@@ -1,6 +1,6 @@
 package dataStructures;
 
-public class DoubleLinkedList<T> implements IStack<T>, IList<T> {
+public class DoubleLinkedList<T> extends Stack<T> implements IList<T> {
 	
 	private DoubleNode<T> start;
 	private DoubleNode<T> end;

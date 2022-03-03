@@ -1,6 +1,6 @@
 package dataStructures;
 
-public class ArrayList <T> implements IStack<T> {
+public class ArrayList <T> extends Stack<T> {
 
 	private SingleNode<T> head;
 	private int count;

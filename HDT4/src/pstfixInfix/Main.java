@@ -14,7 +14,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		if (userMode == "ArrayList") {
 			
-		scanner.close();
+			scanner.close();
 		}else if (userMode == "Vector") {
 			scanner.close();
 		}else if (userMode == "List") {
@@ -24,12 +24,19 @@ public class Main {
 			String listType = scanner.nextLine();
 			
 			if (listType == "SingleLinkedList") {
-			scanner.close();	
+					
 			}else if (listType == "DoubleLinkedList") {
-			scanner.close();	
+					
+			}else {
+				System.out.print("No selecciono ninguna opcion valida de lista, feliz dia.");
+				
 			}
+			
+			scanner.close();
+			
 		}else {
 			System.out.print("No selecciono niguna opcion valida. Feliz dia");
+			scanner.close();
 		}
 	}
 	public static void main(String[] args) {
