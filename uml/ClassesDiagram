@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-03-02T20:10:07.255Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 OPR/84.0.4316.21" etag="yIa-mqCx2WSjl63p7vAb" version="16.6.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-03-03T00:09:44.150Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 OPR/84.0.4316.21" etag="LtLtE41ewvw5pqvsIb8E" version="16.6.5" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1154" dy="1561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1378" dy="1686" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -131,16 +131,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="kA3dtjdttqzixoVsOhXD-31" value="Infx2Psfx" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="330" y="-390" width="280" height="230" as="geometry" />
+          <mxGeometry x="330" y="-390" width="280" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="kA3dtjdttqzixoVsOhXD-32" value="- infxlist: String[]&#xa;- stackOp: String&#xa;- stackStorageOp1: ArrayList&lt;Integer&gt;&#xa;- stackStorageOp2: Vector&lt;Integer&gt;&#xa;- stackStorageOp3: SingleLinkedList&lt;Integer&gt;&#xa;- stackStorageOp4: DoubleLinkedList&lt;Integer&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kA3dtjdttqzixoVsOhXD-31" vertex="1">
-          <mxGeometry y="26" width="280" height="94" as="geometry" />
+        <mxCell id="kA3dtjdttqzixoVsOhXD-32" value="- infxlist: Stack&lt;String&gt;&#xa;- stackOp: String&#xa;- stackStorage: Stack&lt;Integer&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kA3dtjdttqzixoVsOhXD-31" vertex="1">
+          <mxGeometry y="26" width="280" height="54" as="geometry" />
         </mxCell>
         <mxCell id="kA3dtjdttqzixoVsOhXD-33" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="kA3dtjdttqzixoVsOhXD-31" vertex="1">
-          <mxGeometry y="120" width="280" height="8" as="geometry" />
+          <mxGeometry y="80" width="280" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="kA3dtjdttqzixoVsOhXD-34" value="+ stackCase(output: string, stackOps: stack): void&#xa;- addToStackInfix(X: int): void&#xa;- addToStackOps(X: string): void&#xa;- evaluateCases(Y:&lt;T&gt;): void&#xa;- readStack(mode: boolean, &lt;T&gt;): &lt;T&gt;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kA3dtjdttqzixoVsOhXD-31" vertex="1">
-          <mxGeometry y="128" width="280" height="102" as="geometry" />
+        <mxCell id="kA3dtjdttqzixoVsOhXD-34" value="+ Infx2Psfix(output: String, stackOps: String): Public&#xa;+ readStack(listValues:String[] ):&#xa;- stackCase(stackOption: string): int&#xa;- evaluateCases(Y:&lt;T&gt;): void&#xa; &#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kA3dtjdttqzixoVsOhXD-31" vertex="1">
+          <mxGeometry y="88" width="280" height="102" as="geometry" />
         </mxCell>
         <mxCell id="kA3dtjdttqzixoVsOhXD-35" value="PostfixOperations" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="720" y="-250" width="239" height="190" as="geometry" />
@@ -177,7 +177,7 @@
             <mxPoint x="120" y="-160" as="sourcePoint" />
             <mxPoint x="280" y="-160" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="120" y="-229" />
+              <mxPoint x="120" y="-269" />
               <mxPoint x="120" y="-110" />
               <mxPoint x="550" y="-110" />
             </Array>
