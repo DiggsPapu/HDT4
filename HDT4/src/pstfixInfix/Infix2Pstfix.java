@@ -10,6 +10,7 @@ public class Infix2Pstfix {
 	
 		private Stack<String> infixList;
 		private Stack<String> stackStorage;
+		private Stack<String> infixListFinal;
 		
 		public Stack<String> getInfixList() {
 			return infixList;
@@ -25,21 +26,25 @@ public class Infix2Pstfix {
 				//Caso en el que se genera el stack de ArrayList
 				stackStorage = new ArrayList<String>();
 				infixList = new ArrayList<String>();
+				infixListFinal = new ArrayList<String>();
 				
 			}else if (output == "Vector") {
 				//Caso en el que se genera el stack de Vector
 				stackStorage= new Vector<String>(list.length);
 				infixList = new Vector<String>(list.length);
+				infixListFinal = new ArrayList<String>();
 				
 			}else if (output == "SingleLinkedList") {
 				//Caso en el que se genera el stack de StringLinkedList
 				stackStorage= new SingleLinkedList<String>();
 				infixList = new SingleLinkedList<String>();
+				infixListFinal = new ArrayList<String>();
 				
 			}else if (output == "DoubleLinkedList") {
 				//Caso en el que se genera el stack de DoubleLinkedList
 				stackStorage= new DoubleLinkedList<String>();
 				infixList = new DoubleLinkedList<String>();
+				infixListFinal = new ArrayList<String>();
 				
 			}else {
 				System.out.print("Se ingreso una estructura de dato invalida.");
@@ -77,8 +82,13 @@ public class Infix2Pstfix {
 			}
 			printStack();
 			printList();
-			
-			return infixList;
+			int counter = infixList.Count();
+			for (int k = 0; k<counter; k++) {
+				infixListFinal.push(infixList.pull());
+				System.out.print(infixListFinal.peek());
+			}
+			printListFinal();
+			return infixListFinal;
 		}
 		
 		private void evaluateCases(String value) {
@@ -182,7 +192,12 @@ public class Infix2Pstfix {
 			}
 			System.out.print("\n");
 		}
-		
+		private void printListFinal() {
+			for (int k = 0 ; k<infixListFinal.Count(); k++) {
+				System.out.print(((ArrayList<String>) infixListFinal).Get(k)+" ");
+			}
+			System.out.print("\n");
+		}
 		private void printStack() {
 			for (int k = 0 ; k<stackStorage.Count(); k++) {
 				System.out.print(((ArrayList<String>) stackStorage).Get(k)+" ");
