@@ -8,9 +8,12 @@ import dataStructures.Vector;
 
 public class Infix2Pstfix {
 	
-		Stack<String> infixList;
-		Stack<String> stackStorage;
+		private Stack<String> infixList;
+		private Stack<String> stackStorage;
 		
+		public Stack<String> getInfixList() {
+			return infixList;
+		}
 		/**
 		 * Es un factory para crear un Stack de un tipo especifico de estructura de dato.
 		 * @param text
@@ -42,33 +45,7 @@ public class Infix2Pstfix {
 				System.out.print("Se ingreso una estructura de dato invalida.");
 				
 			}
-//			switch(output) {
-//			//Casos
-//			
-//			case "ArrayList":
-//				//Caso en el que se genera el stack de ArrayList
-//				stackStorage = new ArrayList<String>();
-//				infixList = new ArrayList<String>();
-//				System.out.print("Entro ArrayList\n");
-//			case "Vector":
-//				//Caso en el que se genera el stack de Vector
-//				stackStorage= new Vector<String>();
-//				infixList = new Vector<String>();
-//				System.out.print("Entro Vector\n");
-//			case "SingleLinkedList":
-//				//Caso en el que se genera el stack de StringLinkedList
-//				stackStorage= new SingleLinkedList<String>();
-//				infixList = new SingleLinkedList<String>();
-//				System.out.print("Entro SingleLinkedList\n");
-//			case "DoubleLinkedList":
-//				//Caso en el que se genera el stack de DoubleLinkedList
-//				stackStorage= new DoubleLinkedList<String>();
-//				infixList = new DoubleLinkedList<String>();
-//				System.out.print("Entro DoubleLinkedList\n");
-//			default: 
-//				System.out.print("Se ingreso una estructura de dato invalida.");
-//			
-//			}
+
 		}
 		/**
 		 * Este sirve para leer los valores del texto en lista.
@@ -98,11 +75,11 @@ public class Infix2Pstfix {
 				}
 				
 			}
-			
+//			printStack();
 //			printList();
+			
 			return infixList;
 		}
-		
 		
 		private void evaluateCases(String value) {
 			try {
@@ -189,7 +166,6 @@ public class Infix2Pstfix {
 			
 			while (!stackStorage.IsEmpty() && stackStorage.peek()!="(") {
 				infixList.push(stackStorage.pull());	
-//				printList();
 			} if (stackStorage.IsEmpty()) {
 				System.out.print("Hizo falta un parentesis abierto");
 			} else if (stackStorage.peek()=="(") {
@@ -199,7 +175,7 @@ public class Infix2Pstfix {
 		
 		
 
-//			
+//ESTOS 3 METODOS SIRVEN PARA IMPRIMIR LAS LISTAS Y VERIFICAR DE QUE ESTAN BIEN		
 //		private void printList() {
 //			for (int k = 0 ; k<infixList.Count(); k++) {
 //				System.out.print(((ArrayList<String>) infixList).Get(k)+" ");
@@ -213,13 +189,13 @@ public class Infix2Pstfix {
 //			}
 //			System.out.print("\n");
 //		}
-		public static void main(String[] args) {
-			Infix2Pstfix translate = new Infix2Pstfix();
-			String[] list = {"(","1","+","3",")","*","24","*","3","^","(","1","/","2",")"};
-			translate.Infx2Pstfix("ArrayList", list);
-			translate.readStack(list);
-
-		}
-	
+//		public static void main(String[] args) {
+//			Infix2Pstfix translate = new Infix2Pstfix();
+//			String[] list = {"(","1","+","3",")","*","24","*","3","^","(","1","/","2",")"};
+//			translate.Infx2Pstfix("ArrayList", list);
+//			translate.readStack(list);
+//
+//		}
+//	
 }
 		
