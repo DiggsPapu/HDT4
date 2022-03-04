@@ -14,7 +14,7 @@ public class Singleton {
 	{   
 	if (SN== null)   
 	SN = new Singleton();   
+	}
 	return SN;   
-	}   
 }  
 
