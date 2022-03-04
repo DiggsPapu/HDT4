@@ -88,28 +88,7 @@ class SingleLinkedListTest {
 		assertEquals(null, testEmptyList.DeleteAtStart());
 		assertEquals(null, testEmptyList.Delete(50));
 		
-		PreparacionDeLosTest();
 		
-		Integer valorRandom0 = random.nextInt(testListPotente2.Count());
-		Integer valorInicial1 = testListPotente2.Get(valorRandom0+1);		
-		testListPotente2.Delete(valorRandom0);
-		assertEquals(valorInicial1, testListPotente2.Get(valorRandom0) );
-		
-		Integer valorRandom1 = random.nextInt(testListPotente2.Count());
-		Integer valorInicial2 = testListPotente2.Get(valorRandom1+1);
-		testListPotente2.Delete(valorRandom1);
-		assertEquals(valorInicial2, testListPotente2.Get(valorRandom1) );
-		
-		Integer valorInicial3 = testListPotente2.Get(testListPotente2.Count()-2);
-		testListPotente2.Delete(8490);
-		assertEquals(testListPotente2.Get(testListPotente2.Count()-1), valorInicial3);
-		
-		Integer valorInicial4 = testListPotente2.Get(0+1);
-		testListPotente2.Delete(-32891);
-		assertEquals(valorInicial4, testListPotente2.Get(0));
-		
-		SingleLinkedList<String> testMptyList = new SingleLinkedList<String>();
-		assertEquals(null, testMptyList.Delete(50));
 	}
 
 	@Test

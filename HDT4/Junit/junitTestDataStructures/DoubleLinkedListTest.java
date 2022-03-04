@@ -178,20 +178,20 @@ class DoubleLinkedListTest {
 		PreparacionDeLosTest();
 		testListPotente2.push(109);
 		testListPotente1.push(109);
-		assertEquals(testListPotente2.DeleteAtStart(), testListPotente1.pull());
+		assertEquals(testListPotente2.DeleteAtEnd(), testListPotente1.pull());
 	}
 
 	@Test
 	void testPeek() {
 		PreparacionDeLosTest();
-		assertEquals(testListPotente2.Get(0), testListPotente2.peek());
+		assertEquals(testListPotente2.Get(testListPotente2.Count()-1), testListPotente2.peek());
 	}
 
 
 	@Test
 	void testPush() {
 		PreparacionDeLosTest();
-		testListPotente2.InsertAtStart(438920); 
+		testListPotente2.InsertAtEnd(438920); 
 		testListPotente1.push(438920);
 		assertEquals(testListPotente2.pull(), testListPotente1.pull());
 	}
