@@ -2,9 +2,7 @@ package pstfixInfix;
 
 //import java.util.Stack;
 import dataStructures.Stack;
-import dataStructures.Vector;
-import dataStructures.ArrayList;
-import dataStructures.SingleLinkedList;
+
 import dataStructures.DoubleLinkedList;
 import java.lang.Math;
 
@@ -12,7 +10,7 @@ public class Postfix {
 	private Stack<String> psfxList;
 	private Stack<Float> stackNum;
 	
-	
+
 	public float evaluatePsfx(Stack<String> list) {
 		psfxList =  list;
 		stackNum = new DoubleLinkedList<Float>();

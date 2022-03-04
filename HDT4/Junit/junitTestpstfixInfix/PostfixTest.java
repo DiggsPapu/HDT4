@@ -6,8 +6,6 @@ import pstfixInfix.Infix2Pstfix;
 import pstfixInfix.Postfix;
 import org.junit.jupiter.api.Test;
 
-import dataStructures.DoubleLinkedList;
-import dataStructures.SingleLinkedList;
 
 class PostfixTest {
 
