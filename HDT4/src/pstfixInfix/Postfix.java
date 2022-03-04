@@ -12,12 +12,14 @@ public class Postfix {
 	private Stack<String> psfxList;
 	private Stack<Float> stackNum;
 	
+	
 	public float evaluatePsfx(Stack<String> list) {
 		psfxList =  list;
+		stackNum = new DoubleLinkedList<Float>();
 		for (int k = 0; k<=psfxList.Count(); k++) {
 			String valueString = psfxList.pull();
 			
-			System.out.print(valueString+" Es el valor para la corrida : "+k+ "\n");
+			System.out.print(" "+valueString+" Es el valor para la corrida : "+k+ "\n");
 			evaluateOpsType(valueString);
 			
 		}
@@ -38,13 +40,8 @@ public class Postfix {
 	}
 	private void evaluateOpsType(String valueString) {
 		try {
-			
-			int value = Integer.parseInt(valueString);
-
-			Float value1 = (float) value;
-			System.out.print("Entro\n");
-			stackNum.push(value1);
-			System.out.print("Termino\n");
+			stackNum.push((float) Integer.parseInt(valueString));
+			System.out.print(stackNum.peek()+"\n");
 			
 		}catch (Exception e) {
 			if (enoughNumbers()) {
@@ -52,6 +49,7 @@ public class Postfix {
 				
 				case "+":{
 					stackNum.push(add());
+					System.out.print(stackNum.peek());
 					break;
 				}case "-":{
 					stackNum.push(subs());
@@ -85,20 +83,20 @@ public class Postfix {
 		}
 	}
 	private Float add(){
-		float result= Integer.parseInt(psfxList.pull()) + Integer.parseInt(psfxList.pull());
+		float result= stackNum.pull() + stackNum.pull();
 		return result;
 	}
 	private Float subs(){
-		float result= - Integer.parseInt(psfxList.pull()) + Integer.parseInt(psfxList.pull());
+		float result= - stackNum.pull() + stackNum.pull();
 		return result;
 	}
 	private Float mult(){
-		float result= Integer.parseInt(psfxList.pull()) * Integer.parseInt(psfxList.pull());
+		float result= stackNum.pull() * stackNum.pull();
 		return result;
 	}
 	private Float div(){
-		float value2 = Integer.parseInt(psfxList.pull());
-		float value1 = Integer.parseInt(psfxList.pull());
+		float value2 = stackNum.pull();
+		float value1 = stackNum.pull();
 		
 		if (value2 == 0 && value1 >= 0) {
 			return (float) 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0;
@@ -112,8 +110,8 @@ public class Postfix {
 	
 	
 	private Float exp(){
-		double value2 = Integer.parseInt(psfxList.pull());
-		double value1 = Integer.parseInt(psfxList.pull());
+		double value2 = stackNum.pull();
+		double value1 = stackNum.pull();
 		
 		float result= (float) Math.pow(value1, value2);
 		return result;
@@ -168,9 +166,10 @@ public class Postfix {
 //        return operationstack.pop();
 //    }
     public static void main(String[] args) {
-		String[] list = {"1","3","+","24","3","1","2","/","^","*","*"};
+		String[] list = {"12","3","+","24","3","1","2","/","^","*","*"};
 		
 		DoubleLinkedList<String> stack = new DoubleLinkedList<String>();
+		
 		for (int k = 0; k<list.length; k++) {
 			stack.push(list[list.length-1-k]);
 			System.out.print(stack.peek()+ "\n");
