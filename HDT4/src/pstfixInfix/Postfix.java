@@ -16,9 +16,9 @@ public class Postfix {
 	public float evaluatePsfx(Stack<String> list) {
 		psfxList =  list;
 		stackNum = new DoubleLinkedList<Float>();
-		for (int k = 0; k<=psfxList.Count(); k++) {
+		int contador = psfxList.Count();
+		for (int k = 0; k<contador; k++) {
 			String valueString = psfxList.pull();
-			
 			System.out.print(" "+valueString+" Es el valor para la corrida : "+k+ "\n");
 			evaluateOpsType(valueString);
 			
@@ -33,7 +33,7 @@ public class Postfix {
 					+ " el resultado es: "+ result);
 			
 		}else {
-			System.out.print("Hubo algun error dado que su expresion"
+			System.out.print("Hubo algun error dado que su expresion "
 					+ "matematica tenia algo malo.");
 		}
 		return result;
@@ -53,15 +53,19 @@ public class Postfix {
 					break;
 				}case "-":{
 					stackNum.push(subs());
+					System.out.print(stackNum.peek());
 					break;
 				}case "*":{
 					stackNum.push(mult());
+					System.out.print(stackNum.peek());
 					break;
 				}case "/":{
 					stackNum.push(div());
+					System.out.print(stackNum.peek());
 					break;
 				}case "^": {
 					stackNum.push(exp());
+					System.out.print(stackNum.peek());
 					break;
 				}
 			}
@@ -97,15 +101,8 @@ public class Postfix {
 	private Float div(){
 		float value2 = stackNum.pull();
 		float value1 = stackNum.pull();
-		
-		if (value2 == 0 && value1 >= 0) {
-			return (float) 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0;
-		}else if (value2 == 0 && value1 <=0) {
-			return (float) -1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0;
-			
-		}else {
-			return value1/value2;
-		}
+		float result = value1/value2;
+		return result;
 	}
 	
 	
@@ -166,7 +163,7 @@ public class Postfix {
 //        return operationstack.pop();
 //    }
     public static void main(String[] args) {
-		String[] list = {"12","3","+","24","3","1","2","/","^","*","*"};
+		String[] list = {"-1","0","3","/","*","+"};
 		
 		DoubleLinkedList<String> stack = new DoubleLinkedList<String>();
 		
