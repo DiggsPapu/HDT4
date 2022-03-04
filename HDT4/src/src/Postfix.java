@@ -1,6 +1,7 @@
 package pstfixInfix;
 
 import java.util.Stack;
+import java.lang.Math;
 
 public class Postfix {
     public static float arithmetic_ops(String[] strArr) {
@@ -19,27 +20,29 @@ public class Postfix {
                 case "^":
                     float right = operands.pop();
                     float left = operands.pop();
-                    float value = 0;
+                    double DResult = 0;
+                    float Result = 0;
                     switch(str) {
                         case "+":
-                            value = left + right;
+                        	DResult = left + right;
                             break;
                         case "-":
-                            value = left - right;
+                        	DResult = left - right;
                             break;
                         case "*":
-                            value = left * right;
+                        	DResult = left * right;
                             break;
                         case "/":
-                            value = left / right;
+                        	DResult = left / right;
                             break;
                         case "^":
-                            value = left / right;
+                        	DResult = Math.pow(left, right);
                             break;
                         default:
                             break;
                     }
-                    operands.push(value);
+                    Result = (float)DResult;
+                    operands.push(Result);
                     break;
                 default:
                     operands.push(Float.parseFloat(str));
