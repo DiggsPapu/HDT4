@@ -43,7 +43,7 @@ class SingleLinkedListTest {
 	@Test
 	void testPeek() {
 		PreparacionDeLosTest();
-		assertEquals(testListPotente2.Get(0), testListPotente2.peek());
+		assertEquals(testListPotente2.Get(testListPotente2.Count()-1), testListPotente2.peek());
 	}
 
 	@Test
