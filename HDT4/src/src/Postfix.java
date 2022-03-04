@@ -4,25 +4,25 @@ import java.util.Stack;
 import java.lang.Math;
 
 public class Postfix {
-    public static float arithmetic_ops(String[] strArr) {
-        Stack<Float> operands = new Stack<Float>();
+    public static float arithmetic_ops(String[] stringList) {
+        Stack<Float> operationstack = new Stack<Float>();
 
-        for(String str : strArr) {
-            if (str.trim().equals("")) {
+        for(String string : stringList) {
+            if (string.trim().equals("")) {
                 continue;
             }
 
-            switch (str) {
+            switch (string) {
                 case "+":
                 case "-":
                 case "*":
                 case "/":
                 case "^":
-                    float right = operands.pop();
-                    float left = operands.pop();
+                    float right = operationstack.pop();
+                    float left = operationstack.pop();
                     double DResult = 0;
                     float Result = 0;
-                    switch(str) {
+                    switch(string) {
                         case "+":
                         	DResult = left + right;
                             break;
@@ -42,13 +42,13 @@ public class Postfix {
                             break;
                     }
                     Result = (float)DResult;
-                    operands.push(Result);
+                    operationstack.push(Result);
                     break;
                 default:
-                    operands.push(Float.parseFloat(str));
+                	operationstack.push(Float.parseFloat(string));
                     break;  
             }
         }
-        return operands.pop();
+        return operationstack.pop();
     }
 }
