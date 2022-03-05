@@ -44,7 +44,7 @@ public class Infix2Pstfix {
 				//Caso en el que se genera el stack de DoubleLinkedList
 				stackStorage= new DoubleLinkedList<String>();
 				infixList = new DoubleLinkedList<String>();
-				infixListFinal = new ArrayList<String>();
+				infixListFinal = new DoubleLinkedList<String>();
 				
 			}else {
 				System.out.print("Se ingreso una estructura de dato invalida.");
@@ -80,14 +80,14 @@ public class Infix2Pstfix {
 				}
 				
 			}
-			printStack();
-			printList();
+//			printStack();
+//			printList();
 			int counter = infixList.Count();
 			for (int k = 0; k<counter; k++) {
 				infixListFinal.push(infixList.pull());
 				System.out.print(infixListFinal.peek());
 			}
-			printListFinal();
+//			printListFinal();
 			return infixListFinal;
 		}
 		
@@ -186,24 +186,24 @@ public class Infix2Pstfix {
 		
 
 //ESTOS 3 METODOS SIRVEN PARA IMPRIMIR LAS LISTAS Y VERIFICAR DE QUE ESTAN BIEN		
-		private void printList() {
-			for (int k = 0 ; k<infixList.Count(); k++) {
-				System.out.print(((ArrayList<String>) infixList).Get(k)+" ");
-			}
-			System.out.print("\n");
-		}
-		private void printListFinal() {
-			for (int k = 0 ; k<infixListFinal.Count(); k++) {
-				System.out.print(((ArrayList<String>) infixListFinal).Get(k)+" ");
-			}
-			System.out.print("\n");
-		}
-		private void printStack() {
-			for (int k = 0 ; k<stackStorage.Count(); k++) {
-				System.out.print(((ArrayList<String>) stackStorage).Get(k)+" ");
-			}
-			System.out.print("\n");
-		}
+//		private void printList() {
+//			for (int k = 0 ; k<infixList.Count(); k++) {
+//				System.out.print(((ArrayList<String>) infixList).Get(k)+" ");
+//			}
+//			System.out.print("\n");
+//		}
+//		private void printListFinal() {
+//			for (int k = 0 ; k<infixListFinal.Count(); k++) {
+//				System.out.print(((ArrayList<String>) infixListFinal).Get(k)+" ");
+//			}
+//			System.out.print("\n");
+//		}
+//		private void printStack() {
+//			for (int k = 0 ; k<stackStorage.Count(); k++) {
+//				System.out.print(((ArrayList<String>) stackStorage).Get(k)+" ");
+//			}
+//			System.out.print("\n");
+//		}
 		public static void main(String[] args) {
 			Infix2Pstfix translate = new Infix2Pstfix();
 			String[] list = {"(","1","+","3",")","*","24","*","3","^","(","1","/","2",")"};
@@ -212,5 +212,4 @@ public class Infix2Pstfix {
 
 		}
 	
-}
-		
+}	

@@ -4,18 +4,19 @@ package pstfixInfix;
 import dataStructures.Stack;
 import dataStructures.Vector;
 import dataStructures.ArrayList;
-import dataStructures.SingleLinkedList;
 import dataStructures.DoubleLinkedList;
-import java.lang.Math;
+import dataStructures.SingleLinkedList;
+
 
 public class Postfix {
 	private Stack<String> psfxList;
 	private Stack<Float> stackNum;
-	
-	
-	public float evaluatePsfx(Stack<String> list) {
+	private Calculator calculadora;
+
+	public float evaluatePsfx(Stack<String> list,String DataStructure) {
 		psfxList =  list;
-		stackNum = new DoubleLinkedList<Float>();
+		calculadora = Calculator.getInstance();
+		PostfixDataStructures(DataStructure,list.Count());
 		int contador = psfxList.Count();
 		for (int k = 0; k<contador; k++) {
 			String valueString = psfxList.pull();
@@ -48,23 +49,23 @@ public class Postfix {
 				switch (valueString) {
 				
 				case "+":{
-					stackNum.push(add());
+					stackNum.push(calculadora.add(stackNum.pull(), stackNum.pull()));
 					System.out.print(stackNum.peek());
 					break;
 				}case "-":{
-					stackNum.push(subs());
+					stackNum.push(calculadora.subs(stackNum.pull(), stackNum.pull()));
 					System.out.print(stackNum.peek());
 					break;
 				}case "*":{
-					stackNum.push(mult());
+					stackNum.push(calculadora.mult(stackNum.pull(), stackNum.pull()));
 					System.out.print(stackNum.peek());
 					break;
 				}case "/":{
-					stackNum.push(div());
+					stackNum.push(calculadora.div(stackNum.pull(), stackNum.pull()));
 					System.out.print(stackNum.peek());
 					break;
 				}case "^": {
-					stackNum.push(exp());
+					stackNum.push(calculadora.exp(stackNum.pull(), stackNum.pull()));
 					System.out.print(stackNum.peek());
 					break;
 				}
@@ -79,6 +80,37 @@ public class Postfix {
 			}
 		}
 	}
+	/**
+	 * Es un factory para crear y seleccionar el tipo de estructura de dato
+	 * para realizar las operaciones postfix
+	 * @param output
+	 * @param counter
+	 */
+	public void PostfixDataStructures(String output, int counter){
+		if (output=="ArrayList") {
+			//Caso en el que se genera el stack de ArrayList
+			stackNum = new ArrayList<Float>();
+			
+		}else if (output == "Vector") {
+			//Caso en el que se genera el stack de Vector
+			stackNum= new Vector<Float>(counter);
+			
+		}else if (output == "SingleLinkedList") {
+			//Caso en el que se genera el stack de StringLinkedList
+			stackNum= new SingleLinkedList<Float>();
+			
+		}else if (output == "DoubleLinkedList") {
+			//Caso en el que se genera el stack de DoubleLinkedList
+			stackNum = new DoubleLinkedList<Float>();
+			
+		}else {
+			System.out.print("Se ingreso una estructura de dato invalida.");
+			
+		}
+
+	}
+
+	
 	private boolean enoughNumbers() {
 		if (stackNum.Count()>1) {
 			return true;
@@ -86,33 +118,8 @@ public class Postfix {
 			return false;
 		}
 	}
-	private Float add(){
-		float result= stackNum.pull() + stackNum.pull();
-		return result;
-	}
-	private Float subs(){
-		float result= - stackNum.pull() + stackNum.pull();
-		return result;
-	}
-	private Float mult(){
-		float result= stackNum.pull() * stackNum.pull();
-		return result;
-	}
-	private Float div(){
-		float value2 = stackNum.pull();
-		float value1 = stackNum.pull();
-		float result = value1/value2;
-		return result;
-	}
-	
-	
-	private Float exp(){
-		double value2 = stackNum.pull();
-		double value1 = stackNum.pull();
-		
-		float result= (float) Math.pow(value1, value2);
-		return result;
-	}
+
+
 	
 //    public static float arithmetic_ops(String[] stringList) {
 //        Stack<Float> operationstack = new Stack<Float>();
@@ -163,7 +170,7 @@ public class Postfix {
 //        return operationstack.pop();
 //    }
     public static void main(String[] args) {
-		String[] list = {"-1","0","3","/","*","+"};
+		String[] list = {"1","3","+","24","3","1","2","/","^","*","*"};
 		
 		DoubleLinkedList<String> stack = new DoubleLinkedList<String>();
 		
@@ -172,7 +179,7 @@ public class Postfix {
 			System.out.print(stack.peek()+ "\n");
 		}
 		Postfix postfix = new Postfix();
-		postfix.evaluatePsfx(stack);
+		postfix.evaluatePsfx(stack, "DoubleLinkedList");
 
 	}
 }
