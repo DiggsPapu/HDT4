@@ -60,11 +60,13 @@ public class Infix2Pstfix {
 		public Stack<String> readStack(String[] listValues){
 			//Para evaluar los casos de numero, suma, resta, multiplicacion y division
 			for (int k=0; k<listValues.length; k++) {
-				evaluateCases(listValues[k]);
-//				System.out.print("Ingreso a printList: ");
-//				printList();
-//				System.out.print("Ingreso a printStack: ");
-//				printStack();
+				System.out.print("El valor a verificar ahora es: "+listValues[k]+"\n");
+				evaluateCases(String.valueOf(listValues[k]));
+				
+				System.out.print("Ingreso a printList: ");
+				printList();
+				System.out.print("Ingreso a printStack: ");
+				printStack();
 				
 			}
 			//El pull hace que el contador disminuya por lo que no se almacenan todos
@@ -80,45 +82,89 @@ public class Infix2Pstfix {
 				}
 				
 			}
-//			printStack();
-//			printList();
+			printStack();
+			printList();
 			int counter = infixList.Count();
 			for (int k = 0; k<counter; k++) {
 				infixListFinal.push(infixList.pull());
 				System.out.print(infixListFinal.peek());
 			}
-//			printListFinal();
+			printListFinal();
 			return infixListFinal;
 		}
 		
 		private void evaluateCases(String value) {
 			try {
+				System.out.print("Intento a enttero\n");
 				Integer.parseInt(value);
 				infixList.push(value);
 				
 			}catch (Exception e){
+//				//Caso de ser operando o algo invalido
+//				//Caso de ser un parentesis abierto
+//				if (value == "(") {
+//					stackStorage.push(value);
+//					System.out.print(false);
+//				//Caso de ser una suma o resta
+//				}else if(value == "+"||value=="-") {
+//					caseAddOrLess(value);
+//				//Caso de ser multiplicacion o division
+//				}else if (value == "*" || value == "/"){
+//					caseDivMult(value);
+//				//Caso de ser exponencial
+//				}else if (value == "^") {
+//					caseExp(value);
+//				//Caso de ser parentesis cerrado											
+//				}else if(value==")") {
+//					caseCloseParenthesis();
+//				}else {
+//					//Caso en el que el texto tiene argumentos no validos
+//					System.out.print("El texto tiene ingresados argumentos invalidos\n"
+//							+ "dado que posee argumentos que no son numeros ni operandos de tipo:"
+//							+ " +,-,*,/ o ^.\n");
+//				}
+				switch(value) {
 				//Caso de ser operando o algo invalido
 				//Caso de ser un parentesis abierto
-				if (value =="(") {
+				case "(": {
 					stackStorage.push(value);
-					
+					System.out.print(false);
+					break;
+				}
 				//Caso de ser una suma o resta
-				}else if(value == "+"||value=="-") {
+				case "+": {
 					caseAddOrLess(value);
+					break;
+				}
+				case "-": {
+					caseAddOrLess(value);
+					break;
+				}
 				//Caso de ser multiplicacion o division
-				}else if (value == "*" || value == "/"){
+				case"*":{
 					caseDivMult(value);
+					break;
+				}
+				case"/":{
+					caseDivMult(value);
+					break;
+				}
 				//Caso de ser exponencial
-				}else if (value == "^") {
+				case"^": {
 					caseExp(value);
+				}
 				//Caso de ser parentesis cerrado											
-				}else if(value==")") {
+				case ")":{
 					caseCloseParenthesis();
-				}else {
+					break;
+				}
+				default: {
 					//Caso en el que el texto tiene argumentos no validos
-					System.out.print("El texto tiene ingresados argumentos invalidos"
+					System.out.print("El texto tiene ingresados argumentos invalidos\n"
 							+ "dado que posee argumentos que no son numeros ni operandos de tipo:"
 							+ " +,-,*,/ o ^.\n");
+					break;
+				}
 				}
 		}
 		}
@@ -127,17 +173,25 @@ public class Infix2Pstfix {
 		 * @param value
 		 */
 		private void caseAddOrLess(String value) {
-			if (stackStorage.IsEmpty()|| stackStorage.peek()=="(") {
+			System.out.print(stackStorage.peek());
+			if ((stackStorage.IsEmpty()) ) {
 				stackStorage.push(value);
+				System.out.print(stackStorage.peek()+"\n");
 				
-			}else {
+			}else if (stackStorage.peek()=="("){
+				stackStorage.push(value);
+				System.out.print(stackStorage.peek()+"\n");
+			}
+			else {
 				
 				if ((!stackStorage.IsEmpty()) || (stackStorage.peek() != "(")) {
 					
 					infixList.push(stackStorage.pull());
+					System.out.print(true);
 				}
 				stackStorage.push(value);
 			}
+			
 		}
 		/**
 		 * Metodo en el que se encuentra un operando multiplicacion o division.
@@ -186,27 +240,27 @@ public class Infix2Pstfix {
 		
 
 //ESTOS 3 METODOS SIRVEN PARA IMPRIMIR LAS LISTAS Y VERIFICAR DE QUE ESTAN BIEN		
-//		private void printList() {
-//			for (int k = 0 ; k<infixList.Count(); k++) {
-//				System.out.print(((ArrayList<String>) infixList).Get(k)+" ");
-//			}
-//			System.out.print("\n");
-//		}
-//		private void printListFinal() {
-//			for (int k = 0 ; k<infixListFinal.Count(); k++) {
-//				System.out.print(((ArrayList<String>) infixListFinal).Get(k)+" ");
-//			}
-//			System.out.print("\n");
-//		}
-//		private void printStack() {
-//			for (int k = 0 ; k<stackStorage.Count(); k++) {
-//				System.out.print(((ArrayList<String>) stackStorage).Get(k)+" ");
-//			}
-//			System.out.print("\n");
-//		}
+		private void printList() {
+			for (int k = 0 ; k<infixList.Count(); k++) {
+				System.out.print(((ArrayList<String>) infixList).Get(k)+" ");
+			}
+			System.out.print("\n");
+		}
+		private void printListFinal() {
+			for (int k = 0 ; k<infixListFinal.Count(); k++) {
+				System.out.print(((ArrayList<String>) infixListFinal).Get(k)+" ");
+			}
+			System.out.print("\n");
+		}
+		private void printStack() {
+			for (int k = 0 ; k<stackStorage.Count(); k++) {
+				System.out.print(((ArrayList<String>) stackStorage).Get(k)+" ");
+			}
+			System.out.print("\n");
+		}
 		public static void main(String[] args) {
 			Infix2Pstfix translate = new Infix2Pstfix();
-			String[] list = {"(","1","+","3",")","*","24","*","3","^","(","1","/","2",")"};
+			String[] list = {"(","1","+","3",")","*","3","^","(","1","/","2",")"};
 			translate.Infx2Pstfix("ArrayList", list);
 			translate.readStack(list);
 

@@ -25,7 +25,7 @@ public class Postfix {
 		int contador = psfxList.Count();
 		for (int k = 0; k<contador; k++) {
 			String valueString = psfxList.pull();
-			System.out.print(" "+valueString+" Es el valor para la corrida : "+k+ "\n");
+//			System.out.print(" "+valueString+" Es el valor para la corrida : "+k+ "\n");
 			evaluateOpsType(valueString);
 			
 		}
@@ -47,7 +47,7 @@ public class Postfix {
 	private void evaluateOpsType(String valueString) {
 		try {
 			stackNum.push((float) Integer.parseInt(valueString));
-			System.out.print(stackNum.peek()+"\n");
+//			System.out.print(stackNum.peek()+"\n");
 			
 		}catch (Exception e) {
 			if (enoughNumbers()) {
@@ -55,23 +55,23 @@ public class Postfix {
 				
 				case "+":{
 					stackNum.push(calculadora.add(stackNum.pull(), stackNum.pull()));
-					System.out.print(stackNum.peek());
+//					System.out.print(stackNum.peek());
 					break;
 				}case "-":{
 					stackNum.push(calculadora.subs(stackNum.pull(), stackNum.pull()));
-					System.out.print(stackNum.peek());
+//					System.out.print(stackNum.peek());
 					break;
 				}case "*":{
 					stackNum.push(calculadora.mult(stackNum.pull(), stackNum.pull()));
-					System.out.print(stackNum.peek());
+//					System.out.print(stackNum.peek());
 					break;
 				}case "/":{
 					stackNum.push(calculadora.div(stackNum.pull(), stackNum.pull()));
-					System.out.print(stackNum.peek());
+//					System.out.print(stackNum.peek());
 					break;
 				}case "^": {
 					stackNum.push(calculadora.exp(stackNum.pull(), stackNum.pull()));
-					System.out.print(stackNum.peek());
+//					System.out.print(stackNum.peek());
 					break;
 				}
 			}

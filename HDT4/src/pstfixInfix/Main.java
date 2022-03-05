@@ -25,16 +25,16 @@ public class Main {
 		
 		//Caso en el que la respuesta fue ArrayList
 		case "ArrayList":{
-			System.out.print("ArrayList");
+			System.out.print("ArrayList\n");
 			
 			//Conversion del string del archivo a lista string
 			String[] archiveList = conversionStringArchivo(dir);
-			
 			//Creacion del tipo de estructura de dato seleccionada
 			//En este caso ArrayList
-			infix.Infx2Pstfix(userMode, archiveList);
+			infix.Infx2Pstfix("ArrayList", archiveList);
 			//Traduccion de infix a postfix almacenado en un stack de tipo ArrayList
-			infix.readStack(archiveList);
+			Postfix postfix = new Postfix();
+			postfix.evaluatePsfx(infix.readStack(archiveList), "ArrayList");
 			//Salir del switch
 			break;
 		}
@@ -46,30 +46,30 @@ public class Main {
 			
 			//Creacion del tipo de estructura de dato seleccionada
 			//En este caso Vector y el archive list sirve para saber la longitud del vector dado que es un tipo de estructura no dinámica
-			infix.Infx2Pstfix(userMode, archiveList);
+			infix.Infx2Pstfix("Vector", archiveList);
 			//Traduccion de infix a postfix almacenado en un stack de tipo ArrayList
-			infix.readStack(archiveList);
+			Postfix postfix = new Postfix();
+			postfix.evaluatePsfx(infix.readStack(archiveList), "Vector");
 			//Salir del switch
 			break;
 		}
 		case "List":{
 			System.out.print("Dado que ingreso List, entonces necesitamos que indique que tipo de List:\n"
-					+ "1. SingleLinkedList\n2. DoubleLinkedList");
+					+ "1. SingleLinkedList\n2. DoubleLinkedList\n");
 			userMode = scanner.nextLine();
 			
 			switch (userMode) {
 			case "SingleLinkedList":{
 				System.out.print("SingleLinkedList\n");
-
-
 				//Conversion del string del archivo a lista string
 				String[] archiveList = conversionStringArchivo(dir);
 				
 				//Creacion del tipo de estructura de dato seleccionada
 				//En este caso SingleLinkedList
-				infix.Infx2Pstfix(userMode, archiveList);
-				//Traduccion de infix a postfix almacenado en un stack de tipo ArrayList
-				infix.readStack(archiveList);
+				infix.Infx2Pstfix("SingleLinkedList", archiveList);
+				//Traduccion de infix a postfix almacenado en un stack de tipo SingleLinkedList
+				Postfix postfix = new Postfix();
+				postfix.evaluatePsfx(infix.readStack(archiveList), "SingleLinkedList");
 				//Salir del switch
 				break;
 			}
@@ -83,9 +83,10 @@ public class Main {
 				
 				//Creacion del tipo de estructura de dato seleccionada
 				//En este caso DoubleLinkedList
-				infix.Infx2Pstfix(userMode, archiveList);
-				//Traduccion de infix a postfix almacenado en un stack de tipo ArrayList
-				infix.readStack(archiveList);
+				infix.Infx2Pstfix("DoubleLinkedList", archiveList);
+				//Traduccion de infix a postfix almacenado en un stack de tipo DoubleLinkedList
+				Postfix postfix = new Postfix();
+				postfix.evaluatePsfx(infix.readStack(archiveList), "DoubleLinkedList");
 				//Salir del switch
 				break;
 			}default:{
@@ -108,8 +109,11 @@ public class Main {
 			BufferedReader read= new BufferedReader(new FileReader(filedi));
 			
 			String contenido = read.readLine();
-			String[] tempArray= contenido.split(",");
+			String[] tempArray= contenido.split(" ");
 			read.close();
+			for (int k = 0; k < tempArray.length ; k++) {
+				System.out.print(tempArray[k]+"\n");
+			}
 
 			return tempArray;
 			}
