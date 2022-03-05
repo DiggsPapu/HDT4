@@ -6,10 +6,7 @@ import pstfixInfix.Infix2Pstfix;
 import pstfixInfix.Postfix;
 import org.junit.jupiter.api.Test;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> f67ba83534143b287180ba1db2696d31bf96f6ff
 class PostfixTest {
 	
 	/**

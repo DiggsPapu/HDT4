@@ -2,12 +2,10 @@ package pstfixInfix;
 
 //import java.util.Stack;
 import dataStructures.Stack;
-<<<<<<< HEAD
+
 import dataStructures.Vector;
 import dataStructures.ArrayList;
-=======
 
->>>>>>> f67ba83534143b287180ba1db2696d31bf96f6ff
 import dataStructures.DoubleLinkedList;
 import dataStructures.SingleLinkedList;
 
@@ -15,15 +13,13 @@ import dataStructures.SingleLinkedList;
 public class Postfix {
 	private Stack<String> psfxList;
 	private Stack<Float> stackNum;
-<<<<<<< HEAD
+
 	private Calculator calculadora;
 
-	public float evaluatePsfx(Stack<String> list,String DataStructure) {
-=======
 	
 
-	public float evaluatePsfx(Stack<String> list) {
->>>>>>> f67ba83534143b287180ba1db2696d31bf96f6ff
+	public float evaluatePsfx(Stack<String> list, String DataStructure) {
+
 		psfxList =  list;
 		calculadora = Calculator.getInstance();
 		PostfixDataStructures(DataStructure,list.Count());
