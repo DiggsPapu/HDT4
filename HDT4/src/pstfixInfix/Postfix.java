@@ -13,7 +13,6 @@ import dataStructures.SingleLinkedList;
 public class Postfix {
 	private Stack<String> psfxList;
 	private Stack<Float> stackNum;
-
 	private Calculator calculadora;
 
 	
